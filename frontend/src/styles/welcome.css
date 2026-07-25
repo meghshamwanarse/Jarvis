@@ -1,0 +1,67 @@
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: calc(100vh - 140px);
+}
+
+.welcome-text {
+  text-align: center;
+}
+
+.welcome-text h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.welcome-text p {
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+.jarvis-core {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.core-ring {
+  width: 140px;
+  height: 140px;
+
+  border: 3px solid #3b82f6;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow:
+    0 0 20px #3b82f6,
+    0 0 50px rgba(59, 130, 246, 0.35);
+
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.core-center {
+  width: 70px;
+  height: 70px;
+  background: #3B82F6;
+  border-radius: 50%;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

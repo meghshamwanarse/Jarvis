@@ -1,0 +1,40 @@
+.chat-window {
+  max-width: 900px;
+  margin: 40px auto 120px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.message {
+  max-width: 75%;
+}
+
+.message.user {
+  align-self: flex-end;
+}
+
+.message.jarvis {
+  align-self: flex-start;
+}
+
+.message p {
+  margin-top: 8px;
+  padding: 14px 18px;
+
+  border-radius: 18px;
+
+  line-height: 1.5;
+}
+
+.message.user p {
+  background: #3b82f6;
+  color: white;
+}
+
+.message.jarvis p {
+  background: #1f2937;
+  color: white;
+}

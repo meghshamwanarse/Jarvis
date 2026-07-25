@@ -1,0 +1,57 @@
+.input-container {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 80%;
+  max-width: 1000px;
+
+  display: flex;
+  align-items: center;
+
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+
+  padding: 10px 15px;
+}
+
+.input-container input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+}
+
+.input-container input::placeholder {
+  color: #8b949e;
+}
+
+.mic-btn {
+  background: #3b82f6;
+  border: none;
+  color: white;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: transform 0.2s ease;
+}
+
+.mic-btn:hover {
+  transform: scale(1.08);
+}
+
+/* 👇 Add this at the bottom */
+.input-container:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+}

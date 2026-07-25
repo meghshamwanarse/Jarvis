@@ -1,0 +1,43 @@
+.header {
+  height: 70px;
+  background: #161b22;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 30px;
+
+  border-bottom: 1px solid #2d333b;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 28px;
+  font-weight: bold;
+  color: #f8fafc;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.settings-btn {
+  background: transparent;
+  border: none;
+  color: #f8fafc;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.settings-btn:hover {
+  transform: rotate(30deg);
+}
