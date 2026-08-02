@@ -1,24 +1,47 @@
 import { useState } from "react";
+import { sendMessage } from "../services/api";
 
 function InputBar({ messages, setMessages }) {
   const [input, setInput] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!input.trim()) return;
 
-    setMessages([
-      ...messages,
-      {
-        sender: "user",
-        text: input,
-      },
-      {
-        sender: "jarvis",
-        text: "I'm thinking...",
-      },
-    ]);
+    const userMessage = {
+      sender: "user",
+      text: input,
+    };
 
+    // Show the user's message immediately
+    setMessages([...messages, userMessage]);
+
+    // Store input before clearing it
+    const currentInput = input;
+
+    // Clear input field
     setInput("");
+
+    try {
+      const response = await sendMessage(currentInput);
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "jarvis",
+          text: response,
+        },
+      ]);
+    } catch (error) {
+      console.error(error);
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "jarvis",
+          text: "Unable to connect to Jarvis backend.",
+        },
+      ]);
+    }
   };
 
   return (
