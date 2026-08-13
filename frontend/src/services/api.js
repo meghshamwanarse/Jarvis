@@ -1,9 +1,21 @@
 const API_URL = "http://127.0.0.1:8000";
 
 export async function sendMessage(message) {
-  const response = await fetch(`${API_URL}/`);
+  const response = await fetch(`${API_URL}/chat`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      message: message,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to communicate with Jarvis backend");
+  }
 
   const data = await response.json();
 
-  return data.message;
+  return data.reply;
 }
